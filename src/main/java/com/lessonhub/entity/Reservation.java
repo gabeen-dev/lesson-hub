@@ -30,4 +30,12 @@ public class Reservation extends Timestamped {
 	@Column(nullable = false, length = 100)
 	private String status;
 
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(nullable = false, name = "user_id")
+	private Users users;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(nullable = false, name = "room_id")
+	private PracticeRoom practiceRoom;
+
 }

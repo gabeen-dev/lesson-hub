@@ -25,4 +25,8 @@ public class Payment extends Timestamped {
 	@Column(nullable = false, length = 100)
 	private String status;
 
+	@OneToOne
+	@JoinColumn(nullable = false, name = "reservation_id")
+	private Reservation reservation;
+
 }
